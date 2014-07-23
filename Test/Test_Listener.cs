@@ -45,11 +45,13 @@ namespace Test
                     Console.WriteLine("Message: " + BitConverter.ToInt32(buffer2, 0));
                     NN.Send(s, BitConverter.GetBytes((int)77), SendRecvFlags.NONE);
                 };
-
-            while (true)
+            var watch = new Stopwatch();
+            watch.Start();
+            while (watch.ElapsedMilliseconds < 10000)
             {
-                listener.Listen(TimeSpan.FromMinutes(30));
+                listener.Listen(TimeSpan.FromSeconds(1));
             }
+            watch.Stop();
         }
     }
 }

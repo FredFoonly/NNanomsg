@@ -71,7 +71,7 @@ namespace Test
                     rep.SendImmediate(_serverData);
                 }
 
-                clientThread.Abort();
+                new Thread(() => clientThread.Abort()).Start();
             }
         
         }

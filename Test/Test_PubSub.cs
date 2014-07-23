@@ -67,7 +67,7 @@ namespace Test
                     ++sendCount;
                 }
                 Thread.Sleep(100);
-                clientThread.Abort();
+                new Thread(() => clientThread.Abort()).Start();
 
                 Console.WriteLine("Send count {0} receive count {1}", sendCount, receiveCount);
                 publisher.Dispose();

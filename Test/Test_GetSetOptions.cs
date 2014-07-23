@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using NNanomsg;
 
 namespace Test
@@ -8,6 +9,8 @@ namespace Test
         public static void Execute()
         {
             const string inprocAddress = "inproc://getsetoption_test";
+            
+            Console.WriteLine("Executing GetSetOptions test ");
 
             int v;
             byte[] bs;

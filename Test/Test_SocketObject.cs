@@ -114,7 +114,7 @@ namespace Test
                 var sw = Stopwatch.StartNew();
                 while (sw.Elapsed.TotalSeconds < 10)
                     listener.Listen(TimeSpan.FromSeconds(5));*/
-                clientThread.Abort();
+                new Thread(() => clientThread.Abort()).Start();
             }
         }
     }

@@ -79,7 +79,7 @@ namespace Test
                     
                 }
 
-                clientThread.Abort();
+                new Thread(() => clientThread.Abort()).Start();
             }
         
         }
