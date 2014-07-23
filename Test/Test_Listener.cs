@@ -47,11 +47,13 @@ namespace Test
                 };
             var watch = new Stopwatch();
             watch.Start();
-            while (watch.ElapsedMilliseconds < 10000)
+            while (watch.ElapsedMilliseconds < 5000)
             {
+                Console.WriteLine("Listening...");
                 listener.Listen(TimeSpan.FromSeconds(1));
             }
             watch.Stop();
+            Console.WriteLine("Stop listening...");
         }
     }
 }
